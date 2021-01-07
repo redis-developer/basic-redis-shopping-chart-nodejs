@@ -1,0 +1,71 @@
+html {
+    font-size: 18px;
+
+    @media screen and (min-width: 960px) {
+        font-size: 22px;
+    }
+}
+
+#title {
+    font-size: 240%;
+
+    @media screen and (min-width: 960px) {
+        font-size: 260%;
+    }
+
+    @media screen and (min-width: 1800px) {
+        font-size: 320%;
+    }
+}
+
+#app {
+    background-image: url('../assets/RedisLabs_Illustration.svg');
+    background-repeat: no-repeat;
+    background-size: 22% auto;
+    background-position: 104% -70px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+}
+
+#main-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#shopping-cart {
+    background-color: #eee;
+    margin-bottom: 1.5em;
+}
+
+.increment-button {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 0 !important;
+}
+
+.quantity-input {
+    & * {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 50px !important;
+    }
+
+    input {
+        width: 100px;
+        background-color: #fff;
+        border: 1px solid #999;
+        text-align: center;
+    }
+
+    fieldset {
+        display: none !important;
+    }
+}
+
+.full-width {
+    width: 100% !important;
+    flex-basis: 100%;
+}

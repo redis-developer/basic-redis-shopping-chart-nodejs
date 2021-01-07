@@ -1,0 +1,61 @@
+{
+    "name": "redis-shopping-cart-client",
+    "version": "1.0.0",
+    "private": true,
+    "description": "This shopping cart is using Redis and RedisJson module functionalities, allowing to save JSON as keys using methods like json_get and json_set.",
+    "keywords": [
+        "VueJS",
+        "Shopping Cart"
+    ],
+    "author": "RemoteCraftsmen.com",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "core-js": "^3.6.5",
+        "vue": "^2.6.12",
+        "vuelidate": "^0.7.6",
+        "vuetify": "^2.4.0",
+        "vuex": "^3.6.0"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.17.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-vue": "^7.4.1",
+        "prettier": "^2.2.1",
+        "sass": "^1.32.0",
+        "sass-loader": "^10.1.0",
+        "vue-cli-plugin-vuetify": "~2.0.9",
+        "vue-template-compiler": "^2.6.11",
+        "vuetify-loader": "^1.6.0"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ],
+    "_id": "redis-shopping-cart-client@1.0.0",
+    "license": "MIT"
+}

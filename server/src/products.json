@@ -1,0 +1,64 @@
+{
+    "products": [
+        {
+            "id": "e182115a-63d2-42ce-8fe0-5f696ecdfba6",
+            "name": "Brilliant Watch",
+            "price": "250.00",
+            "stock": 25
+        },
+        {
+            "id": "f9a6d214-1c38-47ab-a61c-c99a59438b12",
+            "name": "Old fashion cellphone",
+            "price": "24.00",
+            "stock": 50
+        },
+        {
+            "id": "1f1321bb-0542-45d0-9601-2a3d007d5842",
+            "name": "Modern iPhone",
+            "price": "1000.00",
+            "stock": 10
+        },
+        {
+            "id": "f5384efc-eadb-4d7b-a131-36516269c218",
+            "name": "Beautiful Sunglasses",
+            "price": "12.00",
+            "stock": 50
+        },
+        {
+            "id": "6d6ca89d-fbc2-4fc2-93d0-6ee46ae97345",
+            "name": "Stylish Cup",
+            "price": "8.00",
+            "stock": 30
+        },
+        {
+            "id": "efe0c7a3-9835-4dfb-87e1-575b7d06701a",
+            "name": "Herb caps",
+            "price": "12.00",
+            "stock": 30
+        },
+        {
+            "id": "x341115a-63d2-42ce-8fe0-5f696ecdfca6",
+            "name": "Audiophile Headphones",
+            "price": "550.00",
+            "stock": 20
+        },
+        {
+            "id": "42860491-9f15-43d4-adeb-0db2cc99174a",
+            "name": "Digital Camera",
+            "price": "225.00",
+            "stock": 20
+        },
+        {
+            "id": "63a3c635-4505-4588-8457-ed04fbb76511",
+            "name": "Empty Bluray Disc",
+            "price": "5.00",
+            "stock": 100
+        },
+        {
+            "id": "97a19842-db31-4537-9241-5053d7c96239",
+            "name": "256BG Pendrive",
+            "price": "60.00",
+            "stock": 50
+        }
+    ]
+}
