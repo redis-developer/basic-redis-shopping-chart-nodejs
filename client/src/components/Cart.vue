@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import CartList from '@/components/CartList';
 import { mapActions, mapGetters } from 'vuex';
+import CartList from '@/components/CartList';
 
 export default {
     name: 'Cart',

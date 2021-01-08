@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import CartItem from '@/components/CartItem';
 import { mapActions } from 'vuex';
+import CartItem from '@/components/CartItem';
 
 export default {
     name: 'CartList',

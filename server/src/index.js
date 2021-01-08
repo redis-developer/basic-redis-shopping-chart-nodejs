@@ -13,7 +13,6 @@ rejson(redis);
 require('dotenv').config();
 
 const {
-    NODE_ENV,
     REDIS_ENDPOINT_URI,
     REDIS_HOST,
     REDIS_PORT,
@@ -25,20 +24,18 @@ const {
 
 const app = express();
 
-if (NODE_ENV !== 'production') {
-    app.use(
-        cors({
-            origin(origin, callback) {
-                if (origin === APP_FRONTEND_URL) {
-                    callback(null, true);
-                } else {
-                    callback(new Error('Not allowed by CORS'));
-                }
-            },
-            credentials: true
-        })
-    );
-}
+app.use(
+    cors({
+        origin(origin, callback) {
+            if (origin === APP_FRONTEND_URL || !origin) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        credentials: true
+    })
+);
 
 const redisEndpointUri = REDIS_ENDPOINT_URI
     ? REDIS_ENDPOINT_URI.replace(/^(redis\:\/\/)/, '')
@@ -47,6 +44,7 @@ const redisEndpointUri = REDIS_ENDPOINT_URI
 const redisClient = redis.createClient(`redis://${redisEndpointUri}`, {
     password: REDIS_PASSWORD
 });
+
 const redisClientService = new RedisClient(redisClient);
 
 app.set('redisClientService', redisClientService);
@@ -66,7 +64,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use('/', express.static(path.join(__dirname, './public')));
+app.use('/', express.static(path.join(__dirname, '../dist')));
 
 const router = require('./routes')(app);
 

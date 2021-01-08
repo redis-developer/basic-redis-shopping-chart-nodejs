@@ -1,6 +1,4 @@
-const { StatusCodes } = require('http-status-codes');
-
-class IndexCartController {
+class CartIndexController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
     }
@@ -9,10 +7,10 @@ class IndexCartController {
         const { cartId } = req.session;
         let productList = [];
 
-        const cartList = await this.redisClientService.redis.hgetall(`cart:${cartId}`);
+        const cartList = await this.redisClientService.hgetall(`cart:${cartId}`);
 
         if (!cartList) {
-            return res.send([]);
+            return res.send(productList);
         }
 
         for (const itemKey of Object.keys(cartList)) {
@@ -25,4 +23,4 @@ class IndexCartController {
     }
 }
 
-module.exports = IndexCartController;
+module.exports = CartIndexController;

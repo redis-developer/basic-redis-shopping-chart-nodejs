@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const checkSession = require('../middleware/checkSession');
-const IndexCartController = require('../controllers/Cart/IndexCartController');
-const UpdateCartController = require('../controllers/Cart/UpdateCartController');
-const DeleteCartItemController = require('../controllers/Cart/DeleteCartItemController');
-const EmptyCartController = require('../controllers/Cart/EmptyCartController');
+const IndexController = require('../controllers/Cart/IndexController');
+const UpdateController = require('../controllers/Cart/UpdateController');
+const DeleteItemController = require('../controllers/Cart/DeleteItemController');
+const EmptyController = require('../controllers/Cart/EmptyController');
 
 module.exports = app => {
     const redisClientService = app.get('redisClientService');
 
-    const indexCartController = new IndexCartController(redisClientService);
-    const updateCartController = new UpdateCartController(redisClientService);
-    const deleteCartItemController = new DeleteCartItemController(redisClientService);
-    const emptyCartController = new EmptyCartController(redisClientService);
+    const indexController = new IndexController(redisClientService);
+    const updateController = new UpdateController(redisClientService);
+    const deleteItemController = new DeleteItemController(redisClientService);
+    const emptyController = new EmptyController(redisClientService);
 
-    router.get('/', [checkSession], (...args) => indexCartController.index(...args));
-    router.put('/:id', [checkSession], (...args) => updateCartController.index(...args));
-    router.delete('/:id', [checkSession], (...args) => deleteCartItemController.index(...args));
-    router.delete('/', [checkSession], (...args) => emptyCartController.index(...args));
+    router.get('/', [checkSession], (...args) => indexController.index(...args));
+    router.put('/:id', [checkSession], (...args) => updateController.index(...args));
+    router.delete('/:id', [checkSession], (...args) => deleteItemController.index(...args));
+    router.delete('/', [checkSession], (...args) => emptyController.index(...args));
 
     return router;
 };

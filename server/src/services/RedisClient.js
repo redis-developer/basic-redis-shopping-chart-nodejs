@@ -2,18 +2,17 @@ const { promisify } = require('util');
 
 class RedisClient {
     constructor(redisClient) {
-        this.keyExpiresInMinutes = 0;
-        this.redis = redisClient;
-        ['json_get', 'json_set', 'hgetall', 'hset', 'hget', 'hdel', 'hincrby', 'scan'].forEach(
-            method => (this.redis[method] = promisify(this.redis[method]))
+        ['json_get', 'json_set', 'hgetall', 'hset', 'hget', 'hdel', 'hincrby', 'del', 'scan'].forEach(
+            method => (redisClient[method] = promisify(redisClient[method]))
         );
+        this.redis = redisClient;
     }
 
-    async eachScan(pattern) {
+    async scan(pattern) {
         let matchingKeysCount = 0;
         let keys = [];
 
-        const recursiveScan = async (cursor = 0) => {
+        const recursiveScan = async (cursor = '0') => {
             const [newCursor, matchingKeys] = await this.redis.scan(cursor, 'MATCH', pattern);
             cursor = newCursor;
 
@@ -36,6 +35,30 @@ class RedisClient {
 
     jsonSet(key, path, json) {
         return this.redis.json_set(key, path, json);
+    }
+
+    hgetall(key) {
+        return this.redis.hgetall(key);
+    }
+
+    hset(hash, key, value) {
+        return this.redis.hset(hash, key, value);
+    }
+
+    hget(hash, key) {
+        return this.redis.hget(hash, key);
+    }
+
+    hdel(hash, key) {
+        return this.redis.hdel(hash, key);
+    }
+
+    hincrby(hash, key, incr) {
+        return this.redis.hincrby(hash, key, incr);
+    }
+
+    del(key) {
+        return this.redis.del(key);
     }
 }
 

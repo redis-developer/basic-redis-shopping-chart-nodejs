@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
 
-class DeleteCartItemController {
+class CartDeleteItemController {
     constructor(redisClientService) {
         this.redisClientService = redisClientService;
     }
@@ -9,10 +9,11 @@ class DeleteCartItemController {
         const { cartId } = req.session;
         const { id: productId } = req.params;
 
-        const quantityInCart = await this.redisClientService.redis.hget(`cart:${cartId}`, `product:${productId}`);
+        const quantityInCart =
+            parseInt(await this.redisClientService.hget(`cart:${cartId}`, `product:${productId}`)) || 0;
 
-        if (quantityInCart >= 0) {
-            await this.redisClientService.redis.hdel(`cart:${cartId}`, `product:${productId}`);
+        if (quantityInCart) {
+            await this.redisClientService.hdel(`cart:${cartId}`, `product:${productId}`);
 
             let productInStore = await this.redisClientService.jsonGet(`product:${productId}`);
 
@@ -26,4 +27,4 @@ class DeleteCartItemController {
     }
 }
 
-module.exports = DeleteCartItemController;
+module.exports = CartDeleteItemController;

@@ -2,7 +2,10 @@
     <v-app>
         <v-container id="main-container">
             <v-row class="text-center mb-16">
-                <h1 id="title" class="my-10 mx-auto">Shopping cart demo</h1>
+                <v-col class="pa-0" cols="12">
+                    <h1 id="title" class="my-10 mx-auto">Shopping cart demo</h1>
+                    <v-btn class="mx-auto" @click="resetData">Reset data</v-btn>
+                </v-col>
             </v-row>
             <v-row>
                 <v-col class="pa-0" cols="12" sm="6" md="8">
@@ -18,9 +21,9 @@
 </template>
 
 <script>
-import ProductList from '@/components/ProductList';
-import Cart from '@/components/Cart';
 import { mapGetters, mapActions } from 'vuex';
+import Cart from '@/components/Cart';
+import ProductList from '@/components/ProductList';
 
 export default {
     name: 'App',
@@ -42,8 +45,17 @@ export default {
 
     methods: {
         ...mapActions({
-            fetchProducts: 'products/fetch'
-        })
+            fetchProducts: 'products/fetch',
+            reset: 'products/reset'
+        }),
+
+        async resetData() {
+            try {
+                await this.reset();
+            } catch (error) {
+                console.error(error);
+            }
+        }
     }
 };
 </script>

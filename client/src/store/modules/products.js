@@ -12,7 +12,7 @@ const getters = {
 
 const mutations = {
     setProducts: (state, products) => {
-        state.products = products.sort((a, b) => a.name < b.name);
+        state.products = products;
     }
 };
 
@@ -20,9 +20,28 @@ const actions = {
     async fetch({ commit }) {
         const { data } = await axios.get('/api/products');
 
-        commit('setProducts', data);
+        const sorted = data.sort((a, b) => {
+            if (a.name.localeCompare(b.name) > 0) {
+                return 1;
+            }
 
-        return data;
+            if (a.name.localeCompare(b.name) < 0) {
+                return -1;
+            }
+
+            return 0;
+        });
+
+        commit('setProducts', sorted);
+
+        return sorted;
+    },
+
+    async reset({ dispatch }) {
+        await axios.post('/api/products/reset');
+
+        await dispatch('fetch');
+        await dispatch('cart/fetch', null, { root: true });
     }
 };
 
