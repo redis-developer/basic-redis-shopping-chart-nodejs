@@ -1,4 +1,4 @@
-# Redis shopping cart demo
+# Redis shopping cart UI
 
 ## Development
 

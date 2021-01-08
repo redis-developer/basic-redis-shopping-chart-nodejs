@@ -1,4 +1,4 @@
-# Redis shopping cart demo
+# Redis shopping cart API
 
 ## Prerequisites
 
