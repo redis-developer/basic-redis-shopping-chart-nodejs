@@ -12,26 +12,14 @@ rejson(redis);
 
 require('dotenv').config();
 
-const {
-    REDIS_ENDPOINT_URI,
-    REDIS_HOST,
-    REDIS_PORT,
-    REDIS_PASSWORD,
-    PORT,
-    SESSION_SECRET,
-    APP_FRONTEND_URL
-} = process.env;
+const { REDIS_ENDPOINT_URI, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, PORT } = process.env;
 
 const app = express();
 
 app.use(
     cors({
         origin(origin, callback) {
-            if (origin === APP_FRONTEND_URL || !origin) {
-                callback(null, true);
-            } else {
-                callback(new Error('Not allowed by CORS'));
-            }
+            callback(null, true);
         },
         credentials: true
     })
@@ -52,7 +40,7 @@ app.set('redisClientService', redisClientService);
 app.use(
     session({
         store: new RedisStore({ client: redisClient }),
-        secret: SESSION_SECRET,
+        secret: 'someSecret',
         resave: false,
         saveUninitialized: false,
         rolling: true,
