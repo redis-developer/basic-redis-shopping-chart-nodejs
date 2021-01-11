@@ -6,7 +6,7 @@
             </v-col>
             <v-col class="pa-0 pl-3" cols="12" sm="8">
                 <small class="font-weight-bold">{{ item.name }}</small>
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                     <div class="d-flex">
                         <v-btn
                             class="increment-button"
