@@ -9,16 +9,23 @@
 ## Development
 
 ```
-# copy file and set proper data inside
-cp .env.example .env
+# Environmental variables
 
-# install dependencies
+Copy `.env.example` to `.env` file and fill environmental variables
+
+-   REDIS_PORT: Redis port (default: 6379)
+-   REDIS_HOST: Redis host (default: 127.0.0.1)
+-   REDIS_PASSWORD: Redis password (default: demo)
+
+# Run docker compose or install redis with RedisJson module manually. You can also go to https://redislabs.com/try-free/ and obtain necessary environmental variables
+
+docker network create global docker-compose up -d --build
+
+# Install dependencies
+
 npm cache clean && npm install
 
-# run docker compose or install redis manually
-docker network create global
-docker-compose up -d --build
+# Run dev server
 
 npm run dev
-
 ```

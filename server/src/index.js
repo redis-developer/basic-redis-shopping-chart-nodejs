@@ -52,7 +52,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.use('/', express.static(path.join(__dirname, '../dist')));
+app.use('/', express.static(path.join(__dirname, '../../client-dist')));
 
 const router = require('./routes')(app);
 

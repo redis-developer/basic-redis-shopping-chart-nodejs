@@ -6,10 +6,10 @@ COPY ./client/ .
 RUN npm run build
 
 FROM node:lts-alpine AS server-build
-WORKDIR /app
+WORKDIR /app/server
 COPY ./server/package.json ./
 RUN npm install
 COPY ./server .
-COPY --from=vue-build /app/dist ./dist
+COPY --from=vue-build /app/dist ./../client-dist
 EXPOSE ${PORT}
 CMD ["node", "./src/index.js"]

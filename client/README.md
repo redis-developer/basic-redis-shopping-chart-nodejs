@@ -3,12 +3,15 @@
 ## Development
 
 ```
-# copy file and set proper data inside
-cp .env.example .env
+# Environmental variables
 
-# install dependencies
+Copy `.env.example` to `.env`
+
+# Install dependencies
+
 npm cache clean && npm install
 
-# run development mode
+# Serve locally
+
 npm run serve
 ```
