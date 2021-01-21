@@ -10,27 +10,28 @@
             <v-col class="pa-0 pl-3" cols="12" sm="8">
                 <small class="font-weight-bold">{{ item.name }}</small>
                 <div class="d-flex flex-wrap">
-                    <div class="d-flex">
+                    <v-btn-toggle rounded multiple>
                         <v-btn
-                            class="increment-button"
                             :disabled="itemQuantity === 1"
+                            small
                             @click="incrementItem(-1)"
                             >-</v-btn
                         >
                         <v-text-field
                             v-model="itemQuantity"
-                            class="quantity-input"
+                            class="quantity-input v-btn v-btn--disabled v-size--small"
+                            style="overflow: hidden"
                             outlined
                             dense
                             @input="onItemQuantityChange"
                         />
                         <v-btn
-                            class="increment-button"
                             :disabled="!item.stock"
+                            small
                             @click="incrementItem(1)"
                             >+</v-btn
                         >
-                    </div>
+                    </v-btn-toggle>
                     <v-btn
                         class="increment-button ml-2"
                         color="white lighten-2"
@@ -38,7 +39,7 @@
                         ><v-icon>mdi-delete</v-icon></v-btn
                     >
                     <v-spacer />
-                    <p class="ml-auto">£{{ item.priceSum }}</p>
+                    <p class="ml-auto">${{ item.priceSum }}</p>
                 </div>
             </v-col>
         </v-row>

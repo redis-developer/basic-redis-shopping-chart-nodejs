@@ -58,10 +58,10 @@ html {
     }
 
     input {
-        width: 100px;
         background-color: #fff;
-        border: 1px solid #999;
         text-align: center;
+        pointer-events: auto !important;
+        width: 100px;
     }
 
     fieldset {
@@ -76,36 +76,9 @@ html {
 
 .product-img {
     position: relative;
-    .product-stock,
-    .product-empty {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 999999;
-        height: 20px;
-        background-color: #fff;
 
-        &:before {
-            content: '';
-            display: block;
-            margin-right: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-            border: 1px solid #888;
-        }
-    }
-    .product-stock {
-        &:before {
-            background-color: #5f5;
-        }
-    }
-    .product-empty {
-        &:before {
-            background-color: #f55;
-        }
+    .v-badge {
+        display: block !important;
     }
 }
 
