@@ -51,10 +51,14 @@ html {
 
 .quantity-input {
     & * {
-        display: block !important;
         margin: 0 !important;
         padding: 0 !important;
-        height: 50px !important;
+    }
+
+    & .v-text-field__slot {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: stretch !important;
     }
 
     input {
