@@ -13,7 +13,7 @@
             </v-col>
         </v-row>
         <v-row v-if="items.length" class="mb-1">
-            <v-btn color="white lighten-2" @click="emptyCart">Empty cart</v-btn>
+            <v-btn @click="emptyCart">Empty cart</v-btn>
             <v-spacer />
             <v-btn>Checkout</v-btn>
         </v-row>

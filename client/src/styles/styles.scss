@@ -61,7 +61,7 @@ html {
         background-color: #fff;
         text-align: center;
         pointer-events: auto !important;
-        width: 100px;
+        width: 40px;
     }
 
     fieldset {
@@ -79,6 +79,11 @@ html {
 
     .v-badge {
         display: block !important;
+
+        .v-badge__wrapper {
+            top: 15px;
+            left: -25px;
+        }
     }
 }
 
