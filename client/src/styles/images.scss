@@ -1,0 +1,13 @@
+.img {
+    &.mw75 {
+        max-width: 75%;
+    }
+
+    &.mw50 {
+        max-width: 50%;
+    }
+
+    height: auto;
+    margin: auto;
+    filter: brightness(1.35);
+}
