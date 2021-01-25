@@ -1,6 +1,9 @@
 <template>
-    <v-container class="pa-3">
-        <v-row id="shopping-cart">
+    <v-container class="pa-3" id="shopping-cart">
+        <v-row class="center">
+            <h2 class="mb-4">Shopping cart</h2>
+        </v-row>
+        <v-row>
             <v-col v-if="items.length">
                 <h3 class="mb-4">Cart contents</h3>
                 <cart-list :items="items" />
@@ -8,14 +11,24 @@
                     Total: <b>${{ total }}</b>
                 </p>
             </v-col>
-            <v-col v-else>
-                <p> Cart is empty. Add items to cart </p>
+            <v-col v-else class="center">
+                <v-icon x-large>mdi-cart</v-icon>
+                <p> Cart is Empty. Please add items. </p>
             </v-col>
         </v-row>
         <v-row v-if="items.length" class="mb-1">
-            <v-btn @click="emptyCart">Empty cart</v-btn>
-            <v-spacer />
-            <v-btn>Checkout</v-btn>
+            <v-col>
+                <v-row>
+                    <v-col cols="6">
+                        <v-btn style="width: 100%" @click="emptyCart"
+                            >Empty cart</v-btn
+                        >
+                    </v-col>
+                    <v-col cols="6">
+                        <v-btn style="width: 100%">Checkout</v-btn>
+                    </v-col>
+                </v-row>
+            </v-col>
         </v-row>
     </v-container>
 </template>

@@ -1,13 +1,13 @@
 <template>
     <v-container>
         <v-row>
-            <v-col class="pa-0" cols="12" sm="4">
+            <v-col class="pa-0" cols="3">
                 <v-img
                     class="img mw50"
                     :src="require(`@/assets/products/${item.id}.jpg`)"
                 />
             </v-col>
-            <v-col class="pa-0 pl-3" cols="12" sm="8">
+            <v-col class="pa-0 pl-3" cols="9">
                 <small class="font-weight-bold">{{ item.name }}</small>
                 <div class="d-flex flex-wrap">
                     <v-btn-toggle rounded>
@@ -33,13 +33,13 @@
                         >
                     </v-btn-toggle>
                     <v-btn
-                        class="increment-button ml-2"
+                        class="increment-button ml-1 mr-1"
                         color="white lighten-2"
                         @click="deleteItem(item.id)"
                         ><v-icon>mdi-delete</v-icon></v-btn
                     >
                     <v-spacer />
-                    <p class="ml-auto">${{ item.priceSum }}</p>
+                    <p class="ml-auto caption">${{ item.priceSum }}</p>
                 </div>
             </v-col>
         </v-row>

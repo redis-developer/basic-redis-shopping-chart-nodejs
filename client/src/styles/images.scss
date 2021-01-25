@@ -1,10 +1,18 @@
 .img {
-    & .mw75 {
-        max-width: 75%;
+    &.mw50 {
+        max-width: 50%;
     }
 
-    & .mw50 {
-        max-width: 50%;
+    // &.mw60 {
+    //     max-width: 60%;
+
+    //     @media screen and (max-width: 540px) {
+    //         max-width: 30%;
+    //     }
+    // }
+
+    &.mw75 {
+        max-width: 75%;
     }
 
     height: auto;
