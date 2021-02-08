@@ -1,49 +1,51 @@
 <template>
-    <v-container>
-        <v-row>
-            <v-col class="pa-0" cols="3">
-                <v-img
-                    class="img mw50"
-                    :src="require(`@/assets/products/${item.id}.jpg`)"
-                />
-            </v-col>
-            <v-col class="pa-0 pl-3" cols="9">
-                <small class="font-weight-bold">{{ item.name }}</small>
-                <div class="d-flex flex-wrap">
-                    <v-btn-toggle rounded>
-                        <v-btn
-                            :disabled="itemQuantity === 1"
-                            small
-                            @click="incrementItem(-1)"
-                            >-</v-btn
-                        >
-                        <v-text-field
-                            v-model="itemQuantity"
-                            class="quantity-input v-btn v-btn--disabled v-size--small"
-                            style="overflow: hidden"
-                            outlined
-                            dense
-                            @input="onItemQuantityChange"
-                        />
-                        <v-btn
-                            :disabled="!item.stock"
-                            small
-                            @click="incrementItem(1)"
-                            >+</v-btn
-                        >
-                    </v-btn-toggle>
-                    <v-btn
-                        class="increment-button ml-1 mr-1"
-                        color="white lighten-2"
-                        @click="deleteItem(item.id)"
-                        ><v-icon>mdi-delete</v-icon></v-btn
-                    >
-                    <v-spacer />
-                    <p class="ml-auto caption">${{ item.priceSum }}</p>
-                </div>
-            </v-col>
+        <v-card class="secondary rounded-lg px-2 pr-lg-2 pl-lg-0 mb-2" >
+            <v-row>
+                <v-col cols="4" lg="3" md="0" class="py-0 d-lg-flex d-sm-none d-md-none pl-0 pl-sm-3 pl-md-3 pl-lg-3">
+                    <v-img
+                        class="rounded-lg d-lg-flex d-md-none"
+                        min-height="100%"
+                        :src="require(`@/assets/products/${item.id}.jpg`)"
+                    />
+                </v-col>
+
+                <v-col cols="8" lg="9" md="12" sm="12">
+                        <v-card-title class="text-subtitle-1 text-xl-h6 pa-0">
+                            {{ item.name }}
+                        </v-card-title>
+
+                        <v-card-actions class="justify-space-between text-xl-h6 px-0">
+                            ${{ item.priceSum }}
+
+                            <v-btn-toggle
+                                multiple
+                                rounded
+                                class="secondary"
+                            >
+                                <v-btn small @click="incrementItem(-1)">
+                                    -
+                                </v-btn>
+
+                                <v-btn small>
+                                    <v-text-field
+                                        style="max-width:10px;"
+                                        v-model="itemQuantity"
+                                        @input="onItemQuantityChange"
+                                    />
+                                </v-btn>
+
+                                <v-btn
+                                    :disabled="!item.stock"
+                                    small
+                                    @click="incrementItem(1)"
+                                >
+                                    +
+                                </v-btn>
+                            </v-btn-toggle>
+                        </v-card-actions>
+                </v-col>
         </v-row>
-    </v-container>
+        </v-card>
 </template>
 
 <script>
@@ -85,6 +87,12 @@ export default {
         },
 
         incrementItem(value) {
+            if (this.itemQuantity + value === 0) {
+                this.deleteItem(this.item.id);
+
+                return;
+            }
+
             this.$emit('save', {
                 id: this.item.id,
                 incrementBy: value
@@ -93,7 +101,3 @@ export default {
     }
 };
 </script>
-
-<style lang="sass" scoped>
-@import '@/styles/images.scss'
-</style>

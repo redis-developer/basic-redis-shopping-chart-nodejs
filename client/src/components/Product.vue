@@ -1,29 +1,38 @@
 <template>
-    <v-col class="product text-center" cols="12" sm="6" md="4">
-        <div class="product-content">
-            <div class="product-img">
-                <v-badge
-                    :content="product.stock ? product.stock : '0'"
-                    :color="product.stock ? 'green' : 'red'"
-                >
-                    <v-img
-                        class="img mw75"
+    <v-col cols="6" sm="6" md="6" lg="4">
+        <v-card class="h-full" :disabled="product.stock === 0">
+            <div class="d-flex justify-center">
+                <v-img
+                        max-width="65%"
                         :src="require(`@/assets/products/${product.id}.jpg`)"
-                    />
-                </v-badge>
+                />
             </div>
 
-            <p class="font-weight-bold">{{ product.name }}</p>
-            <div v-if="product.stock" class="body-2">
-                <p>${{ product.price }}</p>
+            <v-card-title class="pa-3 text-subtitle-1 text-xl-h6">
+                {{ product.name }}
+            </v-card-title>
+
+            <v-card-subtitle class="pa-3 text-subtitle-1 text-xl-h6">
+                ${{ product.price }}
+            </v-card-subtitle>
+
+            <v-card-text class="pa-3 text-left text caption"> </v-card-text>
+
+            <v-divider />
+
+            <v-card-actions class="pa-3 justify-space-between">
+                <span>{{ product.stock ? `${product.stock} in` : 'out of' }} stock</span>
+
                 <v-btn
-                    class="body-2"
-                    style="width: 100%"
+                    class="success"
+                    :disabled="product.stock === 0"
                     @click="$emit('add', product.id)"
-                    >Add to cart</v-btn
                 >
-            </div>
-        </div>
+                    <span class="d-xs-flex d-none d-xl-flex">Add to cart</span>
+                    <v-icon right dark>mdi-cart-plus</v-icon>
+                </v-btn>
+            </v-card-actions>
+        </v-card>
     </v-col>
 </template>
 
@@ -39,7 +48,3 @@ export default {
     }
 };
 </script>
-
-<style lang="sass" scoped>
-@import '@/styles/images.scss'
-</style>

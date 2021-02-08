@@ -1,0 +1,32 @@
+{
+  "app_name": "Redis Shopping Cart demo",
+  "description": "Showcases using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set",
+  "type": "Building Block",
+  "contributed_by": "Redis Labs",
+  "repo_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs",
+  "download_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/archive/main.zip",
+  "hosted_url": "",
+  "quick_deploy": "true",
+  "deploy_buttons": [
+    {
+      "heroku": "https://heroku.com/deploy?template=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs"
+    },
+    {
+      "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fredis-developer%2Fbasic-redis-shopping-chart-nodejs&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD&envDescription=REDIS_ENDPOINT_URI%20is%20required%20at%20least%20to%20connect%20to%20Redis%20clouding%20server"
+    },
+    {
+      "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs.git"
+    }
+  ],
+  "language": ["JavaScript"],
+  "redis_commands": ["JSON_GET", "JSON_SET", "HGETALL", "HSET", "HGET", "HDEL", "HINCRBY", "DEL", "SCAN"],
+  "redis_features": ["json_get", "json_set"],
+  "redis_modules": ["redis-rejson"],
+  "app_image_urls": [
+    "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/blob/main/preview.png?raw=true"
+  ],
+  "youtube_url": "",
+  "special_tags": [],
+  "verticals": ["Financial"],
+  "markdown": "https://raw.githubusercontent.com/redislabs-training/redis-sitesearch/master/README.md"
+}

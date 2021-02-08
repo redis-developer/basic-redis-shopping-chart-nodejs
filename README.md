@@ -1,8 +1,25 @@
-# Redis shopping cart demo
+# Redis Shopping Cart demo
 
 This shopping cart is using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set
 
 ![alt text](https://github.com/RemoteCraftsmen/redis-shopping-cart/blob/main/preview.png?raw=true)
+
+## How it works
+
+### How the data is stored:
+* The products data is stored in external json file. After first request this data is saved in a JSON data type in Redis like: `JSON.SET product:{productId} . {product data in json format}`.
+* The cart data is stored in a hash like: `HSET cart:{cartId} product:{productId} {productQuantity}`, where cartId is random generated value and stored in user session.
+
+### How the data is modified:
+* The product data is modified like `JSON.SET product:{productId} . {new product data in json format}`.
+* The cart data is modified like `HSET cart:{cartId} product:{productId} {newProductQuantity}` or `HINCRBY cart:{cartId} product:{productId} {incrementBy}`.
+* Product can be removed from cart like `HDEL cart:{cartId} product:{productId}`
+* Cart can be cleared using `HGETALL cart:{cartId}` and then `HDEL cart:{cartId} {productKey}`.
+* All carts can be deleted when reset data is requested like: `DEL cart:{cartId}`.
+
+### How the data is accessed:
+* Products: `SCAN {cursor} MATCH product:*` to get all product keys and then `JSON.GET {productKey}`.
+* Cart: `HGETALL cart:{cartId}`to get quantity of products and `JSON.GET product:{productId}` to get products data.
 
 ## Hot to run it locally?
 

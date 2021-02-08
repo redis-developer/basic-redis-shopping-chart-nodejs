@@ -10,6 +10,10 @@ class CartEmptyController {
 
         const cartList = await this.redisClientService.hgetall(`cart:${cartId}`);
 
+        if (!cartList) {
+            return res.sendStatus(StatusCodes.NO_CONTENT);
+        }
+
         for (const key of Object.keys(cartList)) {
             await this.redisClientService.hdel(`cart:${cartId}`, key);
 

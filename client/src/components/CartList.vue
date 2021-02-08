@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import CartItem from '@/components/CartItem';
 
 export default {
@@ -25,6 +25,10 @@ export default {
         }
     },
 
+    computed: {
+        ...mapGetters({ products: 'products/getProducts' })
+    },
+
     methods: {
         ...mapActions({
             saveItems: 'cart/save',
@@ -33,6 +37,37 @@ export default {
 
         async save(data) {
             try {
+                if (data.quantity === '') {
+                    return;
+                }
+
+                if (data.quantity) {
+                    data.quantity = parseInt(data.quantity);
+
+                    if (data.quantity === 0) {
+                        await this.remove(data.id);
+
+                        return;
+                    }
+
+                    const itemInCart = this.items.find(
+                        item => item.id === data.id
+                    );
+
+                    const item = this.products.find(
+                        item => item.id === data.id
+                    );
+
+                    const inCartQuantity = parseInt(itemInCart.quantity);
+
+                    if (
+                        data.quantity > inCartQuantity &&
+                        data.quantity > inCartQuantity + item.stock
+                    ) {
+                        return;
+                    }
+                }
+
                 await this.saveItems(data);
             } catch (error) {
                 console.error(error);

@@ -1,6 +1,5 @@
 <template>
-    <v-container>
-        <v-row v-if="products.length">
+        <v-row v-if="products.length" align="stretch">
             <product
                 v-for="product in products"
                 :key="product.id"
@@ -11,7 +10,6 @@
         <v-row v-else>
             <p> No products in store </p>
         </v-row>
-    </v-container>
 </template>
 
 <script>

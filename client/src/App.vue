@@ -1,30 +1,28 @@
 <template>
     <v-app>
-        <v-container id="main-container">
-            <v-row class="text-center mb-16">
-                <v-col class="pa-0" cols="12">
-                    <h1 id="title" class="my-10 mx-auto">Shopping cart demo</h1>
-                </v-col>
-            </v-row>
+        <v-container>
+            <div class="my-8 d-flex align-center">
+                <div class="pa-4 rounded-lg red darken-1">
+                    <v-icon color="white" size="45">mdi-cart-plus</v-icon>
+                </div>
+                <h1 class="ml-6 font-weight-regular">Shopping Cart demo</h1>
+            </div>
+        </v-container>
+
+        <v-container>
             <v-row>
-                <v-col class="pa-0" cols="12" sm="6" md="8" xl="8">
+                <v-col cols="12" sm="7" md="8">
+                    <info />
                     <product-list :products="products" />
                 </v-col>
-                <v-col cols="12" sm="6" md="4" xl="4">
+                <v-col cols="12" sm="5" md="4" class="d-flex flex-column">
                     <cart />
-                </v-col>
-            </v-row>
-            <v-row class="mb-12">
-                <v-col class="pa-0" cols="12" sm="6" md="8" xl="9">
-                    <v-spacer />
-                </v-col>
-                <v-col cols="12" sm="6" md="4" xl="3">
-                    <reset-data-btn />
+                    <reset-data-btn class="mt-6" />
                 </v-col>
             </v-row>
 
-            <v-footer id="footer" class="mt-12 pa-0">
-                {{ new Date().getFullYear() }} ⓒ
+            <v-footer class="mt-12 pa-0">
+                © Copyright 2021 | All Rights Reserved to Redis Labs
             </v-footer>
         </v-container>
     </v-app>
@@ -35,6 +33,7 @@ import { mapGetters, mapActions } from 'vuex';
 import Cart from '@/components/Cart';
 import ProductList from '@/components/ProductList';
 import ResetDataBtn from '@/components/ResetDataBtn.vue';
+import Info from '@/components/Info';
 
 export default {
     name: 'App',
@@ -42,7 +41,8 @@ export default {
     components: {
         ProductList,
         Cart,
-        ResetDataBtn
+        ResetDataBtn,
+        Info
     },
 
     computed: {
