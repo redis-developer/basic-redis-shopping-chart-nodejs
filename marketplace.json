@@ -12,7 +12,7 @@
       "heroku": "https://heroku.com/deploy?template=https://github.com/RemoteCraftsmen/redis-shopping-cart"
     },
     {
-      "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fredis-developer%2Fbasic-redis-shopping-chart-nodejs&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD&envDescription=REDIS_ENDPOINT_URI%20is%20required%20at%20least%20to%20connect%20to%20Redis%20clouding%20server"
+      "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FRemoteCraftsmen%2Fredis-shopping-cart&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD&envDescription=REDIS_ENDPOINT_URI%20is%20required%20at%20least%20to%20connect%20to%20Redis%20clouding%20server"
     },
     {
       "Google": "https://deploy.cloud.run/?git_repo=https://github.com/RemoteCraftsmen/redis-shopping-cart.git"
