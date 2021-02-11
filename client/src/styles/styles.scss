@@ -2,13 +2,8 @@ body {
     background-image: url('../assets/RedisLabs_Illustration.svg');
     background-color:#F8F8FB;
     background-repeat: no-repeat;
-    background-size: 50vw;
-    background-position: 55vw -9vw;
-
-    @media (max-width: 960px) {
-        background-size: 80vw;
-        background-position: 26vw -14vw;
-    }
+    background-size: 28% auto;
+    background-position: 104% -70px;
 }
 
 #app {
