@@ -1,25 +1,23 @@
 <template>
     <v-alert
-            text
             dense
-            color="info"
-            class="mb-6"
+            color="white"
+            class="mb-6 card v-card"
             border="left"
-
     >
         <v-row
                 align="center"
                 no-gutters
                 @click="alert = !alert"
         >
-            <v-col class="grow">
+            <v-col class="grow black--text">
                 <h3 class="headline">
                     How it works?
                 </h3>
             </v-col>
             <v-col class="shrink">
                 <v-btn
-                        color="info"
+                        color="black"
                         outlined
                 >
                     {{ alert ? 'Collapse' : 'View more'}}
@@ -28,13 +26,13 @@
         </v-row>
 
         <v-divider v-show="alert"
-                   class="my-4 info"
+                   class="my-4 black"
                    style="opacity: 0.22"
         ></v-divider>
 
         <div v-show="alert">
-            <ol>
-                <li>How the data is stored:</li>
+            <ol class="black--text">
+                <li class="font-weight-bold mb-5">How the data is stored:</li>
                 <ul class="mb-5">
                     <li>The products data is stored in external json file. After first request this data is saved in a JSON data type in Redis like: <code>JSON.SET product:{productId} . JSON.SET product:{productId} . '{ "id": "productId", "name": "Product Name", "price": "375.00", "stock": 10 }'</code>.</li>
                     <ul class="mb-5">
@@ -46,7 +44,7 @@
                     </ul>
                 </ul>
 
-                <li>How the data is modified:</li>
+                <li class="font-weight-bold mb-5">How the data is modified:</li>
                 <ul class="mb-5">
                     <li>The product data is modified like <code>JSON.SET product:{productId} . '{ "id": "productId", "name": "Product Name", "price": "375.00", "stock": {newStock} }'</code>.</li>
                     <ul class="mb-5">
@@ -72,7 +70,7 @@
                     </ul>
                 </ul>
 
-                <li>How the data is accessed:</li>
+                <li class="font-weight-bold mb-5">How the data is accessed:</li>
                 <ul class="mb-5">
                     <li>Products: <code>SCAN {cursor} MATCH product:*</code> to get all product keys and then <code>JSON.GET {productKey}</code> in loop.</li>
                     <ul class="mb-5">
