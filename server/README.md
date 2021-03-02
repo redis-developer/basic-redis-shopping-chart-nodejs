@@ -17,13 +17,16 @@ Copy `.env.example` to `.env` file and fill environmental variables
 -   REDIS_HOST: Redis host (default: 127.0.0.1)
 -   REDIS_PASSWORD: Redis password (default: demo)
 
+cp .env.example .env
+
 # Run docker compose or install redis with RedisJson module manually. You can also go to https://redislabs.com/try-free/ and obtain necessary environmental variables
 
-docker network create global docker-compose up -d --build
+docker network create global
+docker-compose up -d --build
 
 # Install dependencies
 
-npm cache clean && npm install
+npm install
 
 # Run dev server
 

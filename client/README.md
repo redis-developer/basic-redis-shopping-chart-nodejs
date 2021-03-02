@@ -7,9 +7,11 @@
 
 Copy `.env.example` to `.env`
 
+cp .env.example .env
+
 # Install dependencies
 
-npm cache clean && npm install
+npm install
 
 # Serve locally
 
