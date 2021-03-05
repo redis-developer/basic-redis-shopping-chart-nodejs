@@ -1,7 +1,7 @@
 {
   "name": "Redis Shopping Cart",
   "description": "This shopping cart is using Redis and RedisJson module functionalities, allowing to save JSON as keys using methods like json_get and json_set.",
-  "repository": "https://github.com/RemoteCraftsmen/redis-shopping-cart",
+  "repository": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs",
   "keywords": [
     "NodeJS",
     "ExpressJS",

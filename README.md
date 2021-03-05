@@ -2,7 +2,7 @@
 
 This shopping cart is using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set
 
-![alt text](https://github.com/RemoteCraftsmen/redis-shopping-cart/blob/main/preview.png?raw=true)
+![alt text](https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/blob/main/preview.png?raw=true)
 
 ## How it works
 
@@ -95,7 +95,7 @@ To make deploys work, you need to create free account in https://redislabs.com/t
 ### Google Cloud Run
 
 [![Run on Google
-Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/RemoteCraftsmen/redis-shopping-cart.git)
+Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs.git)
 
 ### Heroku
 
@@ -103,4 +103,4 @@ Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=
 
 ### Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/RemoteCraftsmen/redis-shopping-cart&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD)
