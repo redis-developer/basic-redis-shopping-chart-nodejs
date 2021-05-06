@@ -8,7 +8,7 @@ This shopping cart is using Redis and RedisJson module functionalities, allowing
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_3Ahm7ctLiA)
+[![Watch the video on YouTube](docs/YTThumbnail.png)](https://www.youtube.com/watch?v=Fvjn5fuUxOU)
 
 ## How it works
 

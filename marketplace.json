@@ -25,7 +25,7 @@
   "app_image_urls": [
     "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/blob/main/preview.png?raw=true"
   ],
-  "youtube_url": "",
+  "youtube_url": "https://www.youtube.com/watch?v=Fvjn5fuUxOU",
   "special_tags": [],
   "verticals": ["Financial"],
   "markdown": "https://raw.githubusercontent.com/redislabs-training/redis-sitesearch/master/README.md"
