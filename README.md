@@ -1,6 +1,6 @@
-# Shopping Cart demo using RedisJSON
+# A Shopping Cart demo app using RedisJSON
 
-This shopping cart is using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set
+This shopping cart is using Redis and RedisJSON module functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
 
 
 
