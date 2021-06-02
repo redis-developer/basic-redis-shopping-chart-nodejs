@@ -1,4 +1,9 @@
-# A Shopping Cart demo app using RedisJSON
+# Tutorial: A Shopping Cart demo app in NodeJS and RedisJSON
+
+## Technical Stack
+
+- Frontend - NodeJS
+- Backend - Redis(RedisJSON)
 
 This shopping cart is using Redis and RedisJSON module functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
 
