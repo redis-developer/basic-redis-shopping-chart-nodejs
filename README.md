@@ -3,12 +3,6 @@
 This shopping cart is using Redis and RedisJSON module functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
 
 
-
-# Overview video
-
-Here's a short video that explains the project and how it uses Redis:
-
-
 ## How it works
 
 ### How the data is stored:
