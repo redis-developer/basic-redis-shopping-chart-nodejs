@@ -8,7 +8,6 @@ This shopping cart is using Redis and RedisJSON module functionalities, allowing
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/raw/main/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=Fvjn5fuUxOU)
 
 ## How it works
 
