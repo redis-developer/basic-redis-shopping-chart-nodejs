@@ -1,4 +1,4 @@
-# Tutorial: A Shopping Cart demo app in NodeJS and RedisJSON
+# Tutorial: A Shopping Cart app in NodeJS and RedisJSON
 
 ## Technical Stack
 
@@ -11,6 +11,7 @@ This shopping cart is using Redis and RedisJSON module functionalities, allowing
 ## How it works
 
 ### How the data is stored:
+
 * The products data is stored in external json file. After first request this data is saved in a JSON data type in Redis like: `JSON.SET product:{productId} . '{ "id": "productId", "name": "Product Name", "price": "375.00", "stock": 10 }'`.
     * E.g `JSON.SET product:e182115a-63d2-42ce-8fe0-5f696ecdfba6 . '{ "id": "e182115a-63d2-42ce-8fe0-5f696ecdfba6", "name": "Brilliant Watch", "price": "250.00", "stock": 2 }'`
 * The cart data is stored in a hash like: `HSET cart:{cartId} product:{productId} {productQuantity}`, where cartId is random generated value and stored in user session.
