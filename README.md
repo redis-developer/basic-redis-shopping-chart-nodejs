@@ -2,7 +2,7 @@
 
 This shopping cart is using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set
 
-![alt text](https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/blob/main/preview.png?raw=true)
+
 
 # Overview video
 
