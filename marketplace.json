@@ -1,5 +1,5 @@
 {
-  "app_name": "Shopping Cart demo app in NodeJS using RedisJSON",
+  "app_name": "Shopping Cart demo app in NodeJS",
   "description": "Shopping Cart demo app in NodeJS using RedisJSON module functionalities",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
