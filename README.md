@@ -2,8 +2,8 @@
 
 ## Technical Stack
 
-- Frontend - NodeJS
-- Backend - Redis(RedisJSON)
+- Frontend - Express, Vue.js
+- Backend - NodeJS, Redis(RedisJSON)
 
 This shopping cart is using Redis and RedisJSON module functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
 
