@@ -1,6 +1,6 @@
 {
-  "app_name": "Redis Shopping Cart demo app using RedisJSON",
-  "description": "Redis Shopping Cart demo app using RedisJSON module functionalities",
+  "app_name": "Shopping Cart demo app using RedisJSON",
+  "description": "Shopping Cart demo app using RedisJSON module functionalities",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs",
