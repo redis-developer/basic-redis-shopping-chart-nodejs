@@ -1,6 +1,6 @@
 {
-  "app_name": "Redis Shopping Cart demo",
-  "description": "Showcases using Redis and RedisJson module functionalities, allowing you to save JSON as keys using methods like json_get and json_set",
+  "app_name": "Redis Shopping Cart demo app using RedisJSON",
+  "description": "Redis Shopping Cart demo app using RedisJSON module functionalities",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs",
@@ -23,10 +23,10 @@
   "redis_features": ["json_get", "json_set"],
   "redis_modules": ["redis-rejson"],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/blob/main/preview.png?raw=true"
+    "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/main/preview.png?raw=true"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=Fvjn5fuUxOU",
   "special_tags": [],
   "verticals": ["Financial"],
-  "markdown": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/raw/main/README.md"
+  "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/raw/main/README.md"
 }
