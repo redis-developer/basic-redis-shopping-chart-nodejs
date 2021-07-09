@@ -20,7 +20,7 @@
   ],
   "language": ["JavaScript"],
   "redis_commands": ["JSON_GET", "JSON_SET", "HGETALL", "HSET", "HGET", "HDEL", "HINCRBY", "DEL", "SCAN"],
-  "redis_features": ["json_get", "json_set"],
+  "redis_features": [],
   "redis_modules": ["RedisJSON"],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/main/preview.png?raw=true"
