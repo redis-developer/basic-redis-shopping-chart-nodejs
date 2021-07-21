@@ -18,7 +18,7 @@
       "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs.git"
     }
   ],
-  "language": ["JavaScript"],
+  "language": ["JavaScript","NodeJS"],
   "redis_commands": ["JSON_GET", "JSON_SET", "HGETALL", "HSET", "HGET", "HDEL", "HINCRBY", "DEL", "SCAN"],
   "redis_features": [],
   "redis_modules": ["RedisJSON"],
