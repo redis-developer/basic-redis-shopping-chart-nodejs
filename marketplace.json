@@ -1,8 +1,8 @@
 {
   "app_name": "Shopping Cart app in NodeJS",
-  "description": "Shopping Cart app in NodeJS using RedisJSON module functionalities",
+  "description": "Shopping Cart app in NodeJS using Redis JSON feature functionalities",
   "type": "Building Block",
-  "contributed_by": "Redis Labs",
+  "contributed_by": "Redis",
   "repo_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs",
   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/master/images/app_preview_image.png",
   "download_url": "https://github.com/redis-developer/basic-redis-shopping-chart-nodejs/archive/main.zip",
@@ -19,15 +19,32 @@
       "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-shopping-chart-nodejs.git"
     }
   ],
-  "language": ["JavaScript","NodeJS"],
-  "redis_commands": ["JSON_GET", "JSON_SET", "HGETALL", "HSET", "HGET", "HDEL", "HINCRBY", "DEL", "SCAN"],
-  "redis_features": [],
-  "redis_modules": ["RedisJSON"],
+  "language": [
+    "JavaScript",
+    "NodeJS"
+  ],
+  "redis_commands": [
+    "JSON_GET",
+    "JSON_SET",
+    "HGETALL",
+    "HSET",
+    "HGET",
+    "HDEL",
+    "HINCRBY",
+    "DEL",
+    "SCAN"
+  ],
+  "redis_use_cases": [],
+  "redis_features": [
+    "JSON"
+  ],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/main/preview.png?raw=true"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=Fvjn5fuUxOU",
   "special_tags": [],
-  "verticals": ["Retail"],
+  "verticals": [
+    "Retail"
+  ],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-shopping-chart-nodejs/main/README.md"
 }
