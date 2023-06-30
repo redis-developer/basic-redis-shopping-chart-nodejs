@@ -1,11 +1,11 @@
-# Tutorial: A Shopping Cart app in NodeJS and RedisJSON
+# Tutorial: A Shopping Cart app in NodeJS and Redis JSON
 
 ## Technical Stack
 
 - Frontend - Vue.js
-- Backend - NodeJS, ExpressJS, Redis(RedisJSON)
+- Backend - NodeJS, ExpressJS, Redis(Redis JSON)
 
-This shopping cart is using Redis and RedisJSON module functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
+This shopping cart is using Redis and Redis JSON functionalities, allowing you to save JSON as keys using methods like json_get and json_set.
 
 
 ## How it works
@@ -29,7 +29,7 @@ This shopping cart is using Redis and RedisJSON module functionalities, allowing
 * Cart can be cleared using `HGETALL cart:{cartId}` and then `HDEL cart:{cartId} {productKey}` in loop.
     * E.g `HGETALL cart:77f7fc881edc2f558e683a230eac217d` => `product:e182115a-63d2-42ce-8fe0-5f696ecdfba6`, `product:f9a6d214-1c38-47ab-a61c-c99a59438b12`, `product:1f1321bb-0542-45d0-9601-2a3d007d5842` => `HDEL cart:77f7fc881edc2f558e683a230eac217d product:e182115a-63d2-42ce-8fe0-5f696ecdfba6`, `HDEL cart:77f7fc881edc2f558e683a230eac217d product:f9a6d214-1c38-47ab-a61c-c99a59438b12`, `HDEL cart:77f7fc881edc2f558e683a230eac217d product:1f1321bb-0542-45d0-9601-2a3d007d5842`
 * All carts can be deleted when reset data is requested like: `SCAN {cursor} MATCH cart:*` and then `DEL cart:{cartId}` in loop.
-    * E.g `SCAN {cursor} MATCH cart:*` => `cart:77f7fc881edc2f558e683a230eac217d`, `cart:217dedc2f558e683a230eac77f7fc881`, `cart:1ede77f558683a230eac7fc88217dc2f` => `DEL cart:77f7fc881edc2f558e683a230eac217d`, `DEL cart:217dedc2f558e683a230eac77f7fc881`, `DEL cart:1ede77f558683a230eac7fc88217dc2f` 
+    * E.g `SCAN {cursor} MATCH cart:*` => `cart:77f7fc881edc2f558e683a230eac217d`, `cart:217dedc2f558e683a230eac77f7fc881`, `cart:1ede77f558683a230eac7fc88217dc2f` => `DEL cart:77f7fc881edc2f558e683a230eac217d`, `DEL cart:217dedc2f558e683a230eac77f7fc881`, `DEL cart:1ede77f558683a230eac7fc88217dc2f`
 
 ### How the data is accessed:
 * Products: `SCAN {cursor} MATCH product:*` to get all product keys and then `JSON.GET {productKey}` in loop.
